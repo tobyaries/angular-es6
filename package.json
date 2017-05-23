@@ -1,0 +1,49 @@
+{
+  "name": "lk-pad",
+  "version": "0.0.1",
+  "description": "a version of lk-app for using on ipad",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp serve",
+    "dev": "gulp build --dev",
+    "prod": "gulp build --prod",
+    "clean": "gulp clean"
+  },
+  "keywords": [
+    "angular-gulp-ES6"
+  ],
+  "author": "Yestin Tian",
+  "license": "MIT",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.3",
+    "angular": "^1.6.4",
+    "angular-sanitize": "^1.6.4",
+    "babel-polyfill": "^6.23.0",
+    "bootstrap": "^3.3.7",
+    "systemjs": "^0.20.12"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-inject": "^4.2.0",
+    "gulp-jshint": "^2.0.4",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-open": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^3.0.8",
+    "gulp-wrap": "^0.13.0",
+    "jshint": "^2.9.4",
+    "node-sass": "^4.5.2",
+    "yargs": "^7.1.0"
+  }
+}
