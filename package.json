@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "gulp serve",
+    "start": "gulp start",
     "dev": "gulp build --dev",
     "prod": "gulp build --prod",
     "clean": "gulp clean"
@@ -30,6 +30,7 @@
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.0.0",
+    "gulp-html-dependencies": "^1.1.0",
     "gulp-if": "^2.0.2",
     "gulp-inject": "^4.2.0",
     "gulp-jshint": "^2.0.4",

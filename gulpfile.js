@@ -24,8 +24,13 @@ gulp.task('index', function () {
     var sources = gulp.src([paths.dist + '/*.js', paths.dist + '/*.css'], {
         read: false
     });
-
-    return target.pipe(_.inject(sources))
+    return target.pipe(_.inject(sources, {
+            ignorePath: 'dist'
+        }))
+        .pipe(_.htmlDependencies({
+            dest: paths.dist, // The basedir of your application. default: path.dirname(file.path) 
+            prefix: '/vendor', // The URL prefix. Default "/" 
+        }))
         .pipe(gulp.dest(paths.dist));
 });
 
@@ -63,16 +68,15 @@ gulp.task('sass', () => {
 //clean task
 gulp.task('clean', () => {
     return gulp.src([
-            paths.dist + 'app.js',
-            paths.dist + 'app.min.js',
-            paths.dist + 'app.css',
-            paths.dist + '*.map',
+            paths.dist
         ])
         .pipe(_.clean());
 })
 
 //build task
-gulp.task('build', _.sequence('clean', 'jshint', 'js', 'sass'));
+gulp.task('build', _.sequence('clean', 'jshint', 'js', 'sass', 'index'));
+//start
+gulp.task('start', _.sequence('build', 'serve'));
 
 //server
 gulp.task('serve', () => {
