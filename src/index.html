@@ -13,9 +13,9 @@
     <!-- endinject -->
 </head>
 
-<body ng-controller="appCtrl as appctrl">
+<body>
     <ui-view></ui-view>
-    <script src="../node_modules/systemjs/dist/system-production.js"></script>
+    <script src="../node_modules/systemjs/dist/system.js"></script>
     <script src="../node_modules/angular/angular.min.js"></script>
     <script src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="../node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
@@ -23,15 +23,16 @@
     <!-- endinject -->
     <script>
         System.config({
-            baseURL: './'
+            baseURL: './',
+            defaultExtension: true
         })
-        System.register("app.js", [], function ($__export) {
-            "use strict";
-            return {
-                setters: [],
-                execute: function () {}
-            };
-        });
+        // System.register("app.js", [], function ($__export) {
+        //     "use strict";
+        //     return {
+        //         setters: [],
+        //         execute: function () {}
+        //     };
+        // });
     </script>
     <script>
         System.import('app.js').then(function () {

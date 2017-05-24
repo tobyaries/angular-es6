@@ -6,7 +6,7 @@ app.component('hello', {
     this.greeting = 'hello';
   
     this.toggleGreeting = function() {
-      this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello'
-    }
+      this.greeting = (this.greeting == 'hello') ? 'whats up' : 'hello';
+    };
   }
-})
+});
