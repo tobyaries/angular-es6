@@ -3,43 +3,44 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <meta http-equiv="Cache-control" content="public">
     <meta http-equiv="Pragma" content="Pragma">
-    <meta http-equiv="Expires" content='36000000'>
+    <meta http-equiv="Expires" content='36000000'>-->
     <title>Angular-ES6</title>
     <link rel="icon" href="favicon.ico?v=2">
+
     <!-- inject:css -->
     <!-- endinject -->
+    <script src="../node_modules/babel-polyfill/dist/polyfill.min.js"></script>
+    <script src="../node_modules/systemjs/dist/system.js"></script>
+    <script>
+        System.config({
+            packages: {
+                js: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                },
+            },
+            meta: {
+                'js/*': {
+                    format: 'cjs'
+                }
+            }
+        });
+        System.import('app.js').then(function () {
+            angular.bootstrap(document, ['app']);
+        });
+    </script>
 </head>
 
 <body>
     <ui-view></ui-view>
-    <script src="../node_modules/systemjs/dist/system.js"></script>
     <script src="../node_modules/angular/angular.min.js"></script>
     <script src="../node_modules/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="../node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
     <!-- inject:js -->
     <!-- endinject -->
-    <script>
-        System.config({
-            baseURL: './',
-            defaultExtension: true
-        })
-        // System.register("app.js", [], function ($__export) {
-        //     "use strict";
-        //     return {
-        //         setters: [],
-        //         execute: function () {}
-        //     };
-        // });
-    </script>
-    <script>
-        System.import('app.js').then(function () {
-            angular.bootstrap(document, ['app']);
-        });
-    </script>
-
 </body>
 
 </html>

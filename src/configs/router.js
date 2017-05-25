@@ -1,4 +1,6 @@
-import '../controller/Ctrl.js';
+import {
+    Ctrl
+} from 'Ctrl.js';
 
 app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', ($stateProvider, $locationProvider, $urlRouterProvider) => {
     $stateProvider

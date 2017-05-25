@@ -39,11 +39,7 @@ gulp.task('js', function () {
     return gulp.src(paths.js)
         .pipe(_.sourcemaps.init())
         .pipe(_.babel({
-            presets: [
-                ['es2015', {
-                    modules: false
-                }]
-            ]
+            presets: ['es2015']
         }))
         .pipe(_.concat('app.js'))
         .pipe(_.if(argv.prod, _.uglify()))
